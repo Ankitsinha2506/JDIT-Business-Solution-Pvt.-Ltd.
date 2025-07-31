@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Logo from '../../assets/images/logo.png'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +35,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-red-500 ">JDIT</span>
-            <span className="text-xl font-medium ml-1 text-dark">Business Solutions</span>
+            <img src={Logo} alt="JDIT Business Solutions Logo" className="h-10" />
+            <span className="text-md font-medium ml-2">Business Solutions</span>
           </Link>
 
           {/* Desktop Navigation */}
