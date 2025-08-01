@@ -35,10 +35,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaFacebook />, url: 'https://facebook.com' },
-    { icon: <FaTwitter />, url: 'https://twitter.com' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com' },
-    { icon: <FaInstagram />, url: 'https://instagram.com' },
+    { icon: <FaFacebook />, url: 'https://www.facebook.com/people/JDIT-Business-solutions-Pvt-Ltd/61570376000478/' },
+    // { icon: <FaTwitter />, url: 'https://twitter.com' },
+    { icon: <FaLinkedin />, url: 'https://www.instagram.com/jdit.solutions/' },
+    { icon: <FaInstagram />, url: 'https://www.linkedin.com/company/jdit-business-solution-pvt-ltd/posts/?feedView=all' },
   ];
 
   return (
