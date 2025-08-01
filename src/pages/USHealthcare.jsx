@@ -120,8 +120,8 @@ const USHealthcare = () => {
   return (
     <LazyMotion features={domAnimation}>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-dark to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-dark opacity-70"></div>
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0" style={{ backgroundImage: `url('/images/hero/healthcare-hero-bg.svg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-6"

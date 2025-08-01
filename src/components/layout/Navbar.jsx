@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Logo from '../../assets/images/logo.png'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,13 +44,13 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <Link 
+              <NavLink 
                 key={link.name} 
                 to={link.path} 
-                className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-dark hover:text-primary' : 'text-dark hover:text-primary'}`}
+                className={({ isActive }) => `font-medium transition-colors duration-300 ${isActive ? 'text-primary border-b-2 border-primary' : isScrolled ? 'text-dark hover:text-primary' : 'text-dark hover:text-primary'}`}
               >
                 {link.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
 
@@ -87,14 +88,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
-                <Link 
+                <NavLink 
                   key={link.name} 
                   to={link.path} 
-                  className="font-medium text-dark hover:text-primary transition-colors duration-300"
+                  className={({ isActive }) => `font-medium transition-colors duration-300 ${isActive ? 'text-primary font-bold' : 'text-dark hover:text-primary'}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
-                </Link>
+                </NavLink>
               ))}
             </div>
           </motion.div>

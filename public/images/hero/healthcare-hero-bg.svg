@@ -1,0 +1,32 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a202c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad1)" />
+  <g filter="url(#blur)" opacity="0.7">
+    <path d="M 100,300 L 300,200 L 500,300 L 700,250 L 900,350" stroke="rgba(255,255,255,0.2)" stroke-width="60" fill="none" />
+    <path d="M 1200,200 L 1400,300 L 1600,250 L 1800,350" stroke="rgba(255,255,255,0.15)" stroke-width="40" fill="none" />
+    <path d="M 300,600 L 500,700 L 700,650 L 900,750 L 1100,700" stroke="rgba(255,255,255,0.1)" stroke-width="50" fill="none" />
+    <path d="M 1300,600 L 1500,700 L 1700,650" stroke="rgba(255,255,255,0.15)" stroke-width="45" fill="none" />
+  </g>
+  <g opacity="0.3">
+    <circle cx="300" cy="300" r="10" fill="#fff" />
+    <circle cx="600" cy="400" r="8" fill="#fff" />
+    <circle cx="900" cy="200" r="12" fill="#fff" />
+    <circle cx="1200" cy="300" r="9" fill="#fff" />
+    <circle cx="1500" cy="250" r="11" fill="#fff" />
+    <circle cx="1800" cy="350" r="10" fill="#fff" />
+    <circle cx="400" cy="600" r="8" fill="#fff" />
+    <circle cx="700" cy="700" r="12" fill="#fff" />
+    <circle cx="1000" cy="650" r="9" fill="#fff" />
+    <circle cx="1300" cy="750" r="11" fill="#fff" />
+    <circle cx="1600" cy="700" r="10" fill="#fff" />
+  </g>
+  <path d="M0,1080 L1920,1080 L1920,950 C1700,1000 1400,980 1100,1020 C800,1060 400,1000 0,950 Z" fill="rgba(0,0,0,0.1)" />
+</svg>
