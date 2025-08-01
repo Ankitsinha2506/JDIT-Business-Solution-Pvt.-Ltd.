@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, LazyMotion, domAnimation } from 'framer-motion';
 import { FaPhoneAlt, FaFileMedical, FaFileInvoiceDollar, FaWallet, FaClinicMedical, FaIdCard } from 'react-icons/fa';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
@@ -31,7 +31,7 @@ const USHealthcare = () => {
         'A/R aging report handling',
         'Daily productivity reporting'
       ],
-      image: 'https://images.unsplash.com/photo-1588776814546-ec7e9f7f1e0d?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/736x/eb/24/b9/eb24b91c97f40e4ab8c180ee9f4cab9c.jpg'
     },
     {
       id: 'medical-coding',
@@ -46,7 +46,7 @@ const USHealthcare = () => {
         'Certified coders (CPC, CCS, etc.)',
         'Coding accuracy and productivity reports'
       ],
-      image: 'https://images.unsplash.com/photo-1581092334444-ef250f5f2b42?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/736x/b6/96/ee/b696ee610d8aac5441d3d68cf64f6242.jpg'
     },
     {
       id: 'medical-billing',
@@ -61,7 +61,7 @@ const USHealthcare = () => {
         'AR follow-up',
         'Monthly reports and analytics'
       ],
-      image: 'https://images.unsplash.com/photo-1588776814833-3c212853cf4c?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/1200x/8f/0b/cd/8f0bcd2b0f382cd60f64f751d4b1b239.jpg'
     },
     {
       id: 'accounts-receivable',
@@ -76,7 +76,7 @@ const USHealthcare = () => {
         'Detailed AR reports',
         'Denial trends analysis'
       ],
-      image: 'https://images.unsplash.com/photo-1585241936936-6f397017b243?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/736x/46/f5/af/46f5afaab78a7b359ad4f2cb7885fde4.jpg'
     },
     {
       id: 'practice-management',
@@ -91,7 +91,7 @@ const USHealthcare = () => {
         'Reporting and analytics',
         'Compliance and documentation support'
       ],
-      image: 'https://images.unsplash.com/photo-1576765607924-25a1c65344d6?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/1200x/76/6e/bd/766ebd5336ec62afa06586a0b8b21717.jpg'
     },
     {
       id: 'insurance-verification',
@@ -106,16 +106,22 @@ const USHealthcare = () => {
         'Coordination of benefits',
         'Verification logs and reports'
       ],
-      image: 'https://images.unsplash.com/photo-1588776814297-23ac34b6e640?auto=format&fit=crop&w=800&q=80'
+      image: 'https://i.pinimg.com/736x/9d/a8/f7/9da8f78885641ff93edd38a6d857292a.jpg'
     }
   ];
 
 
+  // Optimize image loading with lazy loading
+  const optimizedImages = healthcareServices.map(service => ({
+    ...service,
+    // Add loading="lazy" attribute when rendered
+  }));
+
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-800 to-red-600 overflow-hidden">
-        <div className="absolute inset-0 bg-red-900 opacity-70"></div>
+      <section className="relative py-20 bg-gradient-to-r from-dark to-primary overflow-hidden">
+        <div className="absolute inset-0 bg-dark opacity-70"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-6"
@@ -212,6 +218,9 @@ const USHealthcare = () => {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
           </div>
@@ -295,7 +304,7 @@ const USHealthcare = () => {
           </motion.div>
         </div>
       </Section>
-    </>
+    </LazyMotion>
   );
 };
 

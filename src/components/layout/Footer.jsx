@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import logoImage from '../../assets/images/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,9 +48,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold text-white">JDIT</span>
-              <span className="text-xl font-medium ml-1 text-accent">Business Solutions</span>
+            <Link to="/" className="inline-flex items-center mb-6">
+              <img src={logoImage} alt="JDIT" className="h-12 w-auto" />
+              <span className="text-xl font-medium ml-2 text-accent">Business Solutions</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               JDIT is a software development company specializing in custom software solutions for various industries.            </p>
@@ -92,21 +93,21 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center">
-              <FaPhoneAlt className="text-accent mr-3" />
-              <span>+91 7057676132</span>
+              <FaPhoneAlt className="text-accent mr-3 flex-shrink-0" />
+              <span className="text-sm">+91 7057676132</span>
             </div>
             <div className="flex items-center">
-              <FaEnvelope className="text-accent mr-3" />
-              <a href="mailto:info@jditbusiness.com" className="hover:text-accent transition-colors duration-300">
+              <FaEnvelope className="text-accent mr-3 flex-shrink-0" />
+              <a href="mailto:hr@jditbs.com" className="text-sm hover:text-accent transition-colors duration-300">
                 hr@jditbs.com
               </a>
             </div>
-            <div className="flex items-center">
-              <FaMapMarkerAlt className="text-accent mr-3" />
-              <span>
-                301, 3th Floor, Sai Vill Commercial Apartment,
-                Next to Vaibhav Talkies, Behind RR Dage saries, Sr. No. 166,
-                Malwadi Road, App. Sahyadri Hospital , Hadapsar, Pune 411028.
+            <div className="flex items-start">
+              <FaMapMarkerAlt className="text-accent mr-3 mt-1 flex-shrink-0" />
+              <span className="text-sm">
+                301, 3th Floor, Sai Vill Commercial Apartment,<br/>
+                Next to Vaibhav Talkies, Behind RR Dage saries, Sr. No. 166,<br/>
+                Malwadi Road, App. Sahyadri Hospital, Hadapsar, Pune 411028.
               </span>
             </div>
           </div>
