@@ -202,7 +202,7 @@ const Home = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section bgColor="bg-primary" className="text-white">
+      <Section bgColor="bg-red-500" className="text-white">
         <div className="text-center max-w-3xl mx-auto">
           <motion.h2 
             variants={itemVariants}
