@@ -35,32 +35,32 @@ const Contact = () => {
       icon: <FaPhoneAlt />,
       title: 'Phone',
       details: [
-        '+1 (123) 456-7890',
-        '+1 (987) 654-3210'
+        '+91 7057676132',
+        // '+1 (987) 654-3210'
       ]
     },
     {
       icon: <FaEnvelope />,
       title: 'Email',
       details: [
-        'info@jditbusiness.com',
-        'support@jditbusiness.com'
+        'hr@jditbs.com'
       ]
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Address',
       details: [
-        '123 Business Avenue,',
-        'Tech City, TC 12345'
+        // '123 Business Avenue,',
+        // 'Tech City, TC 12345'
+        '301, 3th Floor, Sai Vill Commercial Apartment,Next to Vaibhav Talkies, Behind RR Dage saries, Sr. No. 166, Malwadi Road, App. Sahyadri Hospital , Hadapsar, Pune 411028.'
       ]
     },
     {
       icon: <FaClock />,
-      title: 'Business Hours',
+      title: 'Visiting Hours',
       details: [
-        'Monday - Friday: 9am - 6pm',
-        'Saturday: 10am - 2pm'
+        'Monday - Saturday: 10am - 6pm',
+        // 'Saturday: 10am - 2pm'
       ]
     }
   ];
