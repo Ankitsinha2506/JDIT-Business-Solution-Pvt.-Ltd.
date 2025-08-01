@@ -7,10 +7,10 @@ const About = () => {
   // Animation variants
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.5 } 
+      transition: { duration: 0.5 }
     }
   };
 
@@ -72,7 +72,7 @@ const About = () => {
       <section className="relative py-20 bg-gradient-to-r from-dark to-primary overflow-hidden">
         <div className="absolute inset-0 bg-dark opacity-70"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ const About = () => {
           >
             About JDIT Business Solutions
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-200 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -97,24 +97,25 @@ const About = () => {
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              Founded in 2013, JDIT Business Solutions began with a simple mission: to provide businesses with high-quality, innovative IT solutions that drive growth and efficiency. What started as a small team of passionate developers has grown into a full-service IT company serving clients worldwide.
-            </p>
+              At JDIT Business Solutions Pvt. Ltd., we are passionate about leveraging technology to empower businesses and individuals alike. Established with a vision to revolutionize the digital landscape, JDIT is a dynamic software development company committed to delivering innovative solutions tailored to meet the unique needs of our clients.</p>
             <p className="text-gray-700 mb-4">
-              Over the years, we've expanded our services to include web and mobile development, cloud solutions, IT consulting, and more. Our commitment to quality and client satisfaction has remained unwavering throughout our journey.
+              With a focus on excellence and a dedication to customer satisfaction, we specialize in crafting cutting-edge software applications that drive efficiency, productivity, and growth. Our team of experienced engineers, designers, and project managers collaborate closely with clients to understand their objectives, challenges, and vision, ensuring that each solution we deliver exceeds expectations.</p>
+            <p className="text-gray-700 mb-4">
+              At JDIT, we embrace a customer-centric approach, prioritizing transparency, communication, and collaboration throughout the development process. Whether you require custom software development, mobile app development, web application development, or enterprise solutions, we have the expertise and resources to bring your ideas to life.
             </p>
             <p className="text-gray-700">
-              Today, we're proud to have helped hundreds of businesses across various industries transform their operations through technology. Our team continues to grow, bringing together diverse talents and expertise to deliver exceptional solutions for our clients.
+              Join us on a journey of digital transformation. Discover how JDIT Business Solutions Pvt. Ltd. can help unlock your potential and propel your business to new heights through technology.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={itemVariants}
-            className="relative h-96 rounded-lg overflow-hidden shadow-xl"
+            className="relative h-100 rounded-lg overflow-hidden shadow-xl"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-              alt="JDIT Team" 
-              className="w-full h-full object-cover" 
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="JDIT Team"
+              className="w-full h-full object-cover"
             />
           </motion.div>
         </div>
@@ -123,13 +124,13 @@ const About = () => {
       {/* Core Values Section */}
       <Section bgColor="bg-light">
         <div className="text-center mb-12">
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-3xl font-bold mb-4"
           >
             Our Core Values
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-gray-700 max-w-2xl mx-auto"
           >
@@ -153,13 +154,13 @@ const About = () => {
       {/* Team Section */}
       <Section id="team">
         <div className="text-center mb-12">
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-3xl font-bold mb-4"
           >
             Meet Our Team
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-gray-700 max-w-2xl mx-auto"
           >
@@ -182,9 +183,9 @@ const About = () => {
       </Section>
 
       {/* Mission & Vision Section */}
-      <Section bgColor="bg-primary" className="text-white">
+      <Section bgColor="bg-red-600" className="text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="bg-white/10 p-8 rounded-lg"
           >
@@ -194,7 +195,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="bg-white/10 p-8 rounded-lg"
           >
