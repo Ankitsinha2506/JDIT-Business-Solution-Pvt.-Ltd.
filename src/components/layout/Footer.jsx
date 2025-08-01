@@ -35,6 +35,8 @@ const Footer = () => {
     },
   ];
 
+  
+
   const socialLinks = [
     { icon: <FaFacebook />, url: 'https://www.facebook.com/people/JDIT-Business-solutions-Pvt-Ltd/61570376000478/' },
     // { icon: <FaTwitter />, url: 'https://twitter.com' },
