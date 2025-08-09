@@ -1,0 +1,175 @@
+.openPositionsSection {
+  padding: 80px 20px; /* more vertical padding */
+  background: linear-gradient(135deg, #e0ebf8, #f0f4f8); /* subtle gradient */
+  text-align: center;
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* soft shadow */
+  max-width: 1200px;
+  margin: 60px auto; /* center with some margin top/bottom */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.openPositionsSection h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.openPositionsSection p {
+  margin-bottom: 50px;
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Optional: add a subtle fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.openPositionsSection h2,
+.openPositionsSection p {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+
+.jobCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.jobCard {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: 
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    filter 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.jobCard:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+.jobCard h3 {
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.jobCard p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.applyButton {
+  align-self: flex-start;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px; /* optional max width */
+  margin: 20px auto 0 auto; /* centered with margin on top */
+  display: block;
+}
+
+.applyButton:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
+}
+
+.roleCategoriesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+
+  /* Grid with 4 columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px; /* increased gap for better spacing */
+}
+
+.roleCategory {
+  margin-bottom: 30px;
+}
+
+.roleCategory h3 {
+  color: #dc3545;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.roleCategory ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.roleCategory ul li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .roleCategoriesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .openPositionsSection h2 {
+    font-size: 2rem;
+  }
+
+  .openPositionsSection p {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .roleCategoriesContainer {
+    grid-template-columns: 1fr; /* stack in one column */
+    gap: 30px;
+  }
+
+  .roleCategory h3 {
+    font-size: 1.3rem;
+  }
+}

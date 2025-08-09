@@ -2,12 +2,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Layout from './components/layout/Layout';
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 // Use React.lazy for code splitting
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./pages/Contact'));
 const USHealthcare = lazy(() => import('./pages/USHealthcare'));
+const Careers = lazy(() => import('./pages/Careers') )
+
+
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading component
@@ -47,6 +54,14 @@ function App() {
               <Contact />
             </Suspense>
           } />
+
+          <Route path='careers' element={
+            <Suspense fallback={<PageLoader />}>
+              <Careers />
+            </Suspense>
+          }
+          
+          />
           <Route path="*" element={
             <Suspense fallback={<PageLoader />}>
               <NotFound />

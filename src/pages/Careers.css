@@ -1,0 +1,127 @@
+.counter-section {
+  background-color: #6c757d; /* Bootstrap's bg-secondary */
+  padding: 3rem 0;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.counter-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 250px;
+  flex: 1 1 calc(25% - 2rem); /* 4 cards in a row on large screens */
+  max-width: 300px;
+}
+
+.counter-value {
+  color: #8B0000;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.counter-text {
+  color: white;
+  margin: 0;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .counter-card {
+    flex: 1 1 calc(50% - 2rem); /* 2 cards per row */
+    max-width: none;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.whyWorkSection {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whyWorkSection h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.whyCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.whyCard {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.whyCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.whyCard h3 {
+  font-size: 1.6rem;
+  color: #dc3545;  /* accent color */
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.whyCard p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+  .counter-card {
+    flex: 1 1 100%; /* 1 card per row */
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .counter-value {
+    font-size: 2rem;
+  }
+
+  .counter-text {
+    font-size: 0.95rem;
+  }
+
+  .whyWorkSection h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .whyCardsContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .whyCard {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+}
