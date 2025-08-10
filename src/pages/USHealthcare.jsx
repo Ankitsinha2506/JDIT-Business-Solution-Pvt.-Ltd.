@@ -136,7 +136,7 @@ const USHealthcare = () => {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url('/images/hero/healthcare-hero-bg.jpg')`,
+            backgroundImage: `url('/images/hero/health.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

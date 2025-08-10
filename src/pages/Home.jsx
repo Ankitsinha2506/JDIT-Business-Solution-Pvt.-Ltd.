@@ -1,12 +1,16 @@
-import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
-import { FaLaptopCode, FaMobileAlt, FaCloud, FaChartLine, FaUsers, FaCogs, FaShieldAlt, FaDatabase } from 'react-icons/fa';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+import React from 'react';
+import { FaChartLine, FaCloud, FaCogs, FaDatabase, FaLaptopCode, FaMobileAlt, FaShieldAlt, FaUsers } from 'react-icons/fa';
 import Testimonials from '../components/layout/CarrerLayout/Testimonials';
-import ProjectSection from '../components/layout/ProjectSection';
 import Projects from '../components/layout/Projects';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import Section from '../components/ui/Section';
+
+<HashLink smooth to={`/services#web-design`}>
+  Go to Web Design
+</HashLink>
 
 // Static data outside the component (better for performance)
 // const services = [
@@ -68,7 +72,9 @@ const services = [
       'HTML/CSS prototyping',
       'Design consistency across pages'
     ],
-    image: 'https://i.pinimg.com/1200x/5f/15/3e/5f153ea304e601d9d9cdd622ced582cb.jpg'
+    image: 'https://i.pinimg.com/1200x/5f/15/3e/5f153ea304e601d9d9cdd622ced582cb.jpg',
+
+
   },
   {
     id: 'web-development',
@@ -420,7 +426,8 @@ const Home = () => {
                 title={service.title}
                 content={service.description}
                 icon={service.icon}
-                link={`#${service.id}`}
+                link={`/services#${service.id}`}
+
               />
             </motion.div>
           ))}

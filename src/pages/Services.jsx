@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import {
+  FaChartLine,
+  FaCloud,
+  FaCogs,
+  FaDatabase,
   FaLaptopCode,
   FaMobileAlt,
-  FaCloud,
-  FaChartLine,
-  FaCogs,
-  FaUsers,
   FaShieldAlt,
-  FaDatabase,
+  FaUsers,
 } from 'react-icons/fa';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import Section from '../components/ui/Section';
 
 const containerVariants = {
   hidden: {},

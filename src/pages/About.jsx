@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { FaCheckCircle, FaLightbulb, FaUsers, FaRocket } from 'react-icons/fa';
-import Section from '../components/ui/Section';
+import { FaCheckCircle, FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
 import Card from '../components/ui/Card';
+import Section from '../components/ui/Section';
 
 const containerVariants = {
   hidden: {},
@@ -47,28 +47,28 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: 'John Smith',
+      name: 'Arjun Mehtah',
       position: 'CEO & Founder',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'With over 15 years of experience in the IT industry, John leads our company with vision and expertise.'
+      bio: 'With over 15 years of experience in the IT industry, Arjun leads our company with vision and expertise.'
     },
     {
-      name: 'Sarah Johnson',
+      name: 'Neha Sharma',
       position: 'CTO',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'Sarah oversees our technical strategy and ensures we stay at the forefront of technology innovation.'
+      bio: 'Neha oversees our technical strategy and ensures we stay at the forefront of technology innovation.'
     },
     {
-      name: 'Michael Chen',
+      name: 'Sandeep Kumar',
       position: 'Lead Developer',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'Michael leads our development team, bringing extensive experience in software architecture and development.'
+      bio: 'Sandeep leads our development team, bringing extensive experience in software architecture and development.'
     },
     {
-      name: 'Emily Rodriguez',
+      name: 'Priya Menon',
       position: 'Project Manager',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'Emily ensures our projects are delivered on time and within budget while maintaining high quality standards.'
+      bio: 'Priya ensures our projects are delivered on time and within budget while maintaining high quality standards.'
     }
   ];
 
@@ -85,7 +85,7 @@ const About = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          background: "url('/images/hero/about-hero-bg.jpg') center/cover no-repeat",
+          background: "url('images/hero/About.jpg') center/cover no-repeat",
         }}
       >
         {/* Overlay Layer */}
