@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,12 +21,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to top and close mobile menu on nav click
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'US Healthcare', path: '/us-healthcare' },
-    // { name: 'Portfolio', path: '/portfolio' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -36,7 +41,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={handleNavClick}>
             <img src={Logo} alt="JDIT Business Solutions Logo" className="h-10" />
             <span className="text-md font-medium ml-2">Business Solutions</span>
           </Link>
@@ -44,10 +49,19 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <NavLink 
-                key={link.name} 
-                to={link.path} 
-                className={({ isActive }) => `font-medium transition-colors duration-300 ${isActive ? 'text-primary border-b-2 border-primary' : isScrolled ? 'text-dark hover:text-primary' : 'text-dark hover:text-primary'}`}
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `font-medium transition-colors duration-300 ${
+                    isActive
+                      ? 'text-primary border-b-2 border-primary'
+                      : isScrolled
+                      ? 'text-dark hover:text-primary'
+                      : 'text-dark hover:text-primary'
+                  }`
+                }
+                onClick={handleNavClick}
               >
                 {link.name}
               </NavLink>
@@ -56,15 +70,15 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-dark focus:outline-none"
             >
-              <svg 
-                className="w-6 h-6" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {isMobileMenuOpen ? (
@@ -79,7 +93,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -88,11 +102,15 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
-                <NavLink 
-                  key={link.name} 
-                  to={link.path} 
-                  className={({ isActive }) => `font-medium transition-colors duration-300 ${isActive ? 'text-primary font-bold' : 'text-dark hover:text-primary'}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <NavLink
+                  key={link.name}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `font-medium transition-colors duration-300 ${
+                      isActive ? 'text-primary font-bold' : 'text-dark hover:text-primary'
+                    }`
+                  }
+                  onClick={handleNavClick}
                 >
                   {link.name}
                 </NavLink>

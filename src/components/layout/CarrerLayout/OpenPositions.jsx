@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./OpenPositions.css";  // Adjust path if needed
+import { motion } from "framer-motion";
+import "./OpenPositions.css";
 
 const jobs = [
   {
@@ -144,26 +145,40 @@ const roleCategories = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hover: { scale: 1.04, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" },
+};
+
 const OpenPositions = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="openPositionsSection">
+    <motion.section
+      className="openPositionsSection"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <h2>Open Positions</h2>
       <p>Explore our current job openings and apply today.</p>
 
-      <div className="jobCardsContainer">
+      <motion.div className="jobCardsContainer">
         {jobs.map((job, index) => (
-          <div
+          <motion.div
             key={index}
             className="jobCard"
+            variants={itemVariants}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            style={
-              hoveredIndex === index
-                ? { transform: "translateY(-6px)", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }
-                : {}
-            }
+            animate={hoveredIndex === index ? "hover" : "visible"}
           >
             <h3>{job.title}</h3>
             <p>{job.text}</p>
@@ -173,9 +188,9 @@ const OpenPositions = () => {
             >
               Apply Now
             </button>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="roleCategoriesContainer">
         {roleCategories.map(({ category, roles }, idx) => (
@@ -189,7 +204,7 @@ const OpenPositions = () => {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

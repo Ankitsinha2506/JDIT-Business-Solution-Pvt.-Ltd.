@@ -1,0 +1,14 @@
+.testimonial {
+  background: transparent !important;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.testimonial-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}

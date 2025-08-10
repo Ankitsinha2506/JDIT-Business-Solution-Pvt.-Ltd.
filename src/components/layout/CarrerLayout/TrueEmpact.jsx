@@ -1,7 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 import TrueEmpactImg from "../../../assets/images/hero/TrueEmpact.jpeg";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./TrueEmpact.css";
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hover: { scale: 1.04, boxShadow: "0 8px 24px rgba(0,0,0,0.12)" },
+};
 
 const TrueEmpact = () => {
   const handleJoinClick = () => {
@@ -9,10 +20,19 @@ const TrueEmpact = () => {
   };
 
   return (
-    <section className="trueEmpact">
+    <motion.section
+      className="trueEmpact"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="container">
         <div className="row">
-          <div className="col-xl-7">
+          <motion.div
+            className="col-xl-7"
+            variants={itemVariants}
+          >
             <div className="commonTitle text-center text-xl-left">
               <h1 className="commonTitle__title">
                 <strong>
@@ -20,18 +40,18 @@ const TrueEmpact = () => {
                 </strong>
               </h1>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="row content-row">
-          <div className="col-xl-4">
+          <motion.div className="col-xl-4" variants={itemVariants}>
             <img
               className="impact-img"
               src={TrueEmpactImg}
               alt="Impact"
             />
-          </div>
-          <div className="col-xl-8">
+          </motion.div>
+          <motion.div className="col-xl-8" variants={itemVariants}>
             <p>
               By now, professionals, particularly in the technology sector, know that
               future-proofing our learning and skills is crucial – but learning as we know
@@ -58,10 +78,10 @@ const TrueEmpact = () => {
             <button className="join-btn" onClick={handleJoinClick}>
               Join us
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
