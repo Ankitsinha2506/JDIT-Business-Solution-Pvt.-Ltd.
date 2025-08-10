@@ -1,0 +1,120 @@
+/* Projects.css */
+
+/* Section padding and background */
+.project {
+  background-color: #f9f9f9;
+}
+
+/* Project card container */
+.project-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.project-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+  object-fit: cover;
+}
+
+.project-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Default bottom overlay */
+.overlay-default {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Hover overlay */
+.overlay-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.overlay-hover h4 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.overlay-hover p {
+  font-size: 0.9rem;
+}
+
+/* Hover behavior */
+.project-item:hover .overlay-hover {
+  opacity: 1;
+}
+
+.project-item:hover .overlay-default {
+  opacity: 0;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  .overlay-default {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  .overlay-hover h4 {
+    font-size: 1.1rem;
+  }
+
+  .overlay-hover p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .project-item img {
+    height: 220px; /* fixed height for small screens */
+  }
+
+  .overlay-default {
+    font-size: 0.85rem;
+  }
+
+  .overlay-hover {
+    padding: 15px;
+  }
+
+  .overlay-hover h4 {
+    font-size: 1rem;
+  }
+
+  .overlay-hover p {
+    font-size: 0.8rem;
+  }
+}
