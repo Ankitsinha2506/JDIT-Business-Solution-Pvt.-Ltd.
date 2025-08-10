@@ -18,7 +18,7 @@ const testimonials = [
     { id: 5, src: 'src/assets/images/testimonials/SmartSoftwareServices.png', alt: 'Testimonial Image 5' },
     { id: 6, src: 'src/assets/images/testimonials/TechMahindra.png', alt: 'Testimonial Image 6' },
     { id: 7, src: 'src/assets/images/testimonials/Wipro.png', alt: 'Testimonial Image 7' },
-    { id: 8, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 8' },
+    // { id: 8, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 8' },
 ];
 
 export default function Testimonials() {

@@ -226,15 +226,14 @@ const About = () => {
           <motion.div variants={itemVariants} className="bg-white/10 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="text-gray-200">
-              To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage. We are committed to delivering high-quality services that exceed client expectations and help them achieve their business goals.
+At JDIT Business Solutions Pvt. Ltd., our mission is to empower businesses of all sizes to achieve their full potential through innovative and customized IT solutions. We aim to be a trusted partner by delivering technology-driven services that enhance operational efficiency, foster digital transformation, and accelerate business growth.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="bg-white/10 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
             <p className="text-gray-200">
-              To be a leading global IT solutions provider known for innovation, quality, and client satisfaction. We aim to continuously evolve and adapt to changing technologies, setting new standards in the industry while maintaining our core values and commitment to excellence.
-            </p>
+              Our vision at JDIT Business Solutions Pvt. Ltd. is to be the leading provider of transformative IT solutions globally. We envision a future where businesses of all sizes leverage technology to unlock their full potential and thrive in an ever-evolving digital landscape. Our commitment to innovation, integrity, and excellence fuels our journey toward this vision.            </p>
           </motion.div>
         </motion.div>
       </Section>

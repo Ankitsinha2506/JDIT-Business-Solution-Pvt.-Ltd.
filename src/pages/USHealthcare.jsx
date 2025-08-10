@@ -1,6 +1,14 @@
 import { useState, useCallback, memo } from 'react';
 import { motion, LazyMotion, domAnimation } from 'framer-motion';
-import { FaPhoneAlt, FaFileMedical, FaFileInvoiceDollar, FaWallet, FaClinicMedical, FaIdCard } from 'react-icons/fa';
+import {
+  FaPhoneAlt,
+  FaFileMedical,
+  FaFileInvoiceDollar,
+  FaWallet,
+  FaClinicMedical,
+  FaIdCard
+} from 'react-icons/fa';
+
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
@@ -122,51 +130,51 @@ const USHealthcare = () => {
 
   return (
     <LazyMotion features={domAnimation}>
-      {/* Hero Section */}
-     <section className="relative overflow-hidden">
-  <div
-    className="absolute inset-0"
-    style={{
-      backgroundImage: `url('/images/hero/healthcare-hero-bg.jpg')`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      height: "700px",
-      zIndex: 0,
-    }}
-  />
-  <div
-    className="absolute inset-0 bg-black bg-opacity-50"
-    style={{
-      height: "700px",
-      zIndex: 1,
-    }}
-  />
-  <div
-    className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col justify-center items-center"
-    style={{
-      height: "700px",
-    }}
-  >
-    <motion.h1
-      className="text-4xl md:text-5xl font-bold text-white mb-6 text-center px-4"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      US Healthcare Solutions
-    </motion.h1>
-    <motion.p
-      className="text-xl text-gray-200 max-w-3xl mx-auto text-center px-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-    >
-      Innovative technology solutions for the modern healthcare industry.
-    </motion.p>
-  </div>
-</section>
 
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('/images/hero/healthcare-hero-bg.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            height: "700px",
+            zIndex: 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 bg-black bg-opacity-50"
+          style={{
+            height: "700px",
+            zIndex: 1,
+          }}
+        />
+        <div
+          className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col justify-center items-center"
+          style={{
+            height: "700px",
+          }}
+        >
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-white mb-6 text-center px-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            US Healthcare Solutions
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-200 max-w-3xl mx-auto text-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Innovative technology solutions for the modern healthcare industry.
+          </motion.p>
+        </div>
+      </section>
 
       {/* Overview Section */}
       <Section>
@@ -309,13 +317,20 @@ const USHealthcare = () => {
               variants={itemVariants}
               initial="hidden"
               animate="visible"
-              className="bg-white p-6 rounded-lg shadow-md"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: '0 15px 30px rgba(59, 130, 246, 0.3)', // Tailwind blue-500 with opacity
+                y: -5,
+                transition: { duration: 0.3, ease: 'easeInOut' }
+              }}
+              className="bg-white p-6 rounded-lg shadow-md cursor-pointer"
             >
               <h3 className="text-xl font-semibold mb-3">{title}</h3>
               <p className="text-gray-700">{text}</p>
             </motion.div>
           ))}
         </div>
+
       </Section>
 
       {/* CTA Section */}
@@ -349,6 +364,7 @@ const USHealthcare = () => {
           </motion.div>
         </div>
       </Section>
+
     </LazyMotion>
   );
 };

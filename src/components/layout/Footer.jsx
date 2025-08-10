@@ -86,14 +86,14 @@ const Footer = () => {
               <p className="text-gray-400 mb-8 max-w-md">
                 JDIT is a software development company specializing in custom software solutions for various industries.
               </p>
-              <div className="flex space-x-6">
+              <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-accent transition-colors duration-300 rounded-full hover:bg-accent/20 p-2 hover:scale-110 transform"
+                    className="text-gray-400 hover:text-accent transition-colors duration-300 rounded-full hover:bg-accent/20 p-2 hover:scale-110 transform text-3xl"
                     aria-label="social-link"
                   >
                     {social.icon}

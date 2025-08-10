@@ -9,7 +9,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from 'react-icons/fa';
-
+import emailjs from '@emailjs/browser';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 
@@ -77,13 +77,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! We will get back to you soon.',
-    });
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    setTimeout(() => setFormStatus({ submitted: false, success: false, message: '' }), 5000);
+
+    const time = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', hour12: true });
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+      time: time,
+    };
+
+    emailjs
+      .send('service_n50vpbc', 'template_oibson8', templateParams, 'Zg2-6o7_FK4yrOHZU')
+      .then(() => {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: 'Thank you for your message! We will get back to you soon.',
+        });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setFormStatus({ submitted: false, success: false, message: '' }), 5000);
+      })
+      .catch((error) => {
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: 'Failed to send message, please try again.',
+        });
+        console.error(error);
+        setTimeout(() => setFormStatus({ submitted: false, success: false, message: '' }), 5000);
+      });
   };
 
   return (
@@ -111,7 +135,7 @@ const Contact = () => {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: '100%',
-            maxWidth: '900px', // or whatever max width you want for content
+            maxWidth: '900px',
           }}
         >
           <motion.h1
@@ -152,9 +176,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg">{info.title}</h3>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-700">
-                        {detail}
-                      </p>
+                      <p key={idx} className="text-gray-700">{detail}</p>
                     ))}
                   </div>
                 </div>
@@ -201,8 +223,7 @@ const Contact = () => {
 
             {formStatus.submitted && (
               <div
-                className={`p-4 mb-6 rounded-md ${formStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-                  }`}
+                className={`p-4 mb-6 rounded-md ${formStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}
               >
                 {formStatus.message}
               </div>
@@ -252,6 +273,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    required
                   />
                 </div>
                 <div>
