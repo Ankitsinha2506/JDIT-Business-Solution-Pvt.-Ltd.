@@ -287,13 +287,13 @@ const Home = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
               variants={itemVariants}
             >
-              Innovative IT Solutions for Your Business Growth
+              Empowering Your Business with Cutting-Edge IT Solutions
             </motion.h1>
             <motion.p
               className="text-xl text-gray-200 mb-8 max-w-3xl"
               variants={itemVariants}
             >
-              We help businesses transform through technology with custom software development, cloud solutions, and IT consulting services.
+              At JDIT Business Solution Pvt. Ltd., we deliver tailored software development, cloud integration, and IT consulting to drive your success.
             </motion.p>
             <motion.div
               className="flex flex-wrap justify-center md:justify-start gap-4"
@@ -375,7 +375,21 @@ const Home = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center transition-opacity duration-300"
+                whileHover={{
+                  opacity: 0.8,
+                  scale: 1.05,
+                  backgroundColor: '#f0f4f8', // Light blue-gray color on hover
+                  transition: { duration: 0.3 }
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 100,
+                  delay: index * 0.1
+                }}
               >
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -386,7 +400,7 @@ const Home = () => {
       </Section>
 
       {/* Services Section */}
-       <Section>
+      <Section>
         <div className="text-center mb-12">
           <motion.h2 variants={itemVariants} initial="hidden" animate="visible" className="text-3xl font-bold mb-4">
             Our Services
@@ -416,7 +430,7 @@ const Home = () => {
           </Button>
         </div>
       </Section>
-      
+
       {/* <Section id="services" className='pb-8'>
         <motion.div
           className="text-center mb-12"
