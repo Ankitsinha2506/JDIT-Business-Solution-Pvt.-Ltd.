@@ -1,63 +1,33 @@
 import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
-import React from 'react';
-import { FaChartLine, FaCloud, FaCogs, FaDatabase, FaLaptopCode, FaMobileAlt, FaShieldAlt, FaUsers } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+import {
+  FaChartLine,
+  FaCloud,
+  FaCogs,
+  FaDatabase,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaShieldAlt,
+  FaUsers,
+} from 'react-icons/fa';
 import Testimonials from '../components/layout/CarrerLayout/Testimonials';
 import Projects from '../components/layout/Projects';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Section from '../components/ui/Section';
 
-<HashLink smooth to={`/services#web-design`}>
-  Go to Web Design
-</HashLink>
+// Hash links for navigation
+<>
+  <HashLink smooth to={`/services#web-design`}>
+    Go to Web Design
+  </HashLink>
+  <HashLink smooth to={`/services#web-development`}>
+    Go to Web Development
+  </HashLink>
+</>;
 
-// Static data outside the component (better for performance)
-// const services = [
-//   {
-//     id: 1,
-//     title: 'Web Development',
-//     content: 'Custom web applications and responsive websites built with modern technologies.',
-//     icon: <FaLaptopCode />,
-//     link: '/services#web-development',
-//   },
-//   {
-//     id: 2,
-//     title: 'Mobile App Development',
-//     content: 'Native and cross-platform mobile applications for iOS and Android.',
-//     icon: <FaMobileAlt />,
-//     link: '/services#mobile-apps',
-//   },
-//   {
-//     id: 3,
-//     title: 'Cloud Solutions',
-//     content: 'Scalable cloud infrastructure, migration, and management services.',
-//     icon: <FaCloud />,
-//     link: '/services#cloud-solutions',
-//   },
-//   {
-//     id: 4,
-//     title: 'IT Consulting',
-//     content: 'Strategic technology consulting to optimize your business processes.',
-//     icon: <FaChartLine />,
-//     link: '/services#it-consulting',
-//   },
-//   {
-//     id: 5,
-//     title: 'Enterprise Solutions',
-//     content: 'Custom enterprise software to streamline your business operations.',
-//     icon: <FaCogs />,
-//     link: '/services#enterprise-solutions',
-//   },
-//   {
-//     id: 6,
-//     title: 'Staff Augmentation',
-//     content: 'Skilled IT professionals to supplement your team on-demand.',
-//     icon: <FaUsers />,
-//     link: '/services#staff-augmentation',
-//   },
-// ];
-
+// Services data (unchanged)
 const services = [
   {
     id: 'web-design',
@@ -244,14 +214,15 @@ const services = [
 ];
 
 
+// Stats array: add numeric 'target' to animate
 const stats = [
-  { value: '10+', label: 'Years Experience' },
-  { value: '200+', label: 'Projects Completed' },
-  { value: '50+', label: 'Team Members' },
-  { value: '100+', label: 'Happy Clients' },
+  { value: '10+', label: 'Years Experience', target: 10 },
+  { value: '200+', label: 'Projects Completed', target: 200 },
+  { value: '50+', label: 'Team Members', target: 50 },
+  { value: '100+', label: 'Happy Clients', target: 100 },
 ];
 
-// Animation variants
+// Animation variants (unchanged)
 const containerVariants = {
   hidden: {},
   visible: {
@@ -271,6 +242,35 @@ const itemVariants = {
 };
 
 const Home = () => {
+  // Display stats from 0 to their target
+  const [displayStats, setDisplayStats] = useState(stats.map(() => 0));
+
+  useEffect(() => {
+    const timers = stats.map((stat, index) => {
+      let start = 0;
+      const end = stat.target;
+      const duration = 2000; // 2 seconds
+      const increment = end / (duration / 50);
+
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          start = end;
+          clearInterval(timer);
+        }
+        setDisplayStats((prev) => {
+          const newValues = [...prev];
+          newValues[index] = Math.floor(start);
+          return newValues;
+        });
+      }, 50);
+
+      return timer;
+    });
+
+    return () => timers.forEach((timer) => clearInterval(timer));
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -388,7 +388,7 @@ const Home = () => {
                   opacity: 0.8,
                   scale: 1.05,
                   backgroundColor: '#f0f4f8', // Light blue-gray color on hover
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -396,10 +396,12 @@ const Home = () => {
                   duration: 0.5,
                   type: "spring",
                   stiffness: 100,
-                  delay: index * 0.1
+                  delay: index * 0.1,
                 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  {displayStats[index]}{stat.value.replace(/[0-9]+/, '')}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
@@ -410,16 +412,30 @@ const Home = () => {
       {/* Services Section */}
       <Section>
         <div className="text-center mb-12">
-          <motion.h2 variants={itemVariants} initial="hidden" animate="visible" className="text-3xl font-bold mb-4">
+          <motion.h2
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-3xl font-bold mb-4"
+          >
             Our Services
           </motion.h2>
-          <motion.p variants={itemVariants} initial="hidden" animate="visible" className="text-gray-700 max-w-2xl mx-auto">
+          <motion.p
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-gray-700 max-w-2xl mx-auto"
+          >
             We offer a comprehensive range of IT services to help your business thrive in the digital age.
           </motion.p>
         </div>
 
-        {/* Staggered container */}
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {services.slice(0, 6).map((service) => (
             <motion.div key={service.id} variants={itemVariants}>
               <Card
@@ -427,7 +443,6 @@ const Home = () => {
                 content={service.description}
                 icon={service.icon}
                 link={`/services#${service.id}`}
-
               />
             </motion.div>
           ))}
@@ -440,55 +455,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* <Section id="services" className='pb-8'>
-        <motion.div
-          className="text-center mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            Our Services
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-700 max-w-2xl mx-auto"
-          >
-            We offer a comprehensive range of IT services to help your business thrive in the digital age.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-        >
-          {services.map((service) => (
-            <motion.div key={service.id} variants={itemVariants}>
-              <Card
-                title={service.title}
-                content={service.content}
-                icon={service.icon}
-                link={service.link}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <div className="text-center mt-12">
-          <Button to="/services" variant="outline">
-            View All Services
-          </Button>
-        </div>
-      </Section> */}
-
-      {/* Project Completed Secrtion */}
+      {/* Project Completed Section */}
       <Projects />
 
       {/* Testimonial sections */}
