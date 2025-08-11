@@ -5,7 +5,6 @@ import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Testimonials from '../components/layout/CarrerLayout/Testimonials';
-import ProjectSection from '../components/layout/ProjectSection';
 import Projects from '../components/layout/Projects';
 
 // Static data outside the component (better for performance)
