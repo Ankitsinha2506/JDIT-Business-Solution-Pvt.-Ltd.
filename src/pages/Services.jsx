@@ -1,251 +1,38 @@
-import { motion } from 'framer-motion';
-import {
-  FaChartLine,
-  FaCloud,
-  FaCogs,
-  FaDatabase,
-  FaLaptopCode,
-  FaMobileAlt,
-  FaShieldAlt,
-  FaUsers,
-} from 'react-icons/fa';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import Section from '../components/ui/Section';
+import { HashLink } from 'react-router-hash-link';
+import React from "react";
+import { motion } from "framer-motion";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import Section from "../components/ui/Section";
+import { services } from "../data/servicesData";
 
+const HEADER_OFFSET = 80;
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1, // faster stagger
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 10 }, // less vertical move
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.15 }, // shorter duration
-  },
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
 };
 
-const Services = () => {
-  const services = [
-    {
-      id: 'web-design',
-      title: 'Web Design',
-      description: 'Creative and modern web designs tailored to your brand.',
-      icon: <FaLaptopCode />,
-      features: [
-        'Responsive and mobile-friendly designs',
-        'User-centered layout',
-        'Brand-focused visual elements',
-        'Figma/Adobe XD mockups',
-        'HTML/CSS prototyping',
-        'Design consistency across pages'
-      ],
-      image: 'https://i.pinimg.com/1200x/5f/15/3e/5f153ea304e601d9d9cdd622ced582cb.jpg'
-    },
-    {
-      id: 'web-development',
-      title: 'Web Development',
-      description: 'Robust and scalable websites built with cutting-edge technologies.',
-      icon: <FaLaptopCode />,
-      features: [
-        'Custom web application development',
-        'Full-stack development',
-        'CMS integration',
-        'Performance optimization',
-        'Responsive development',
-        'API development and integration'
-      ],
-      image: 'https://i.pinimg.com/1200x/79/c6/2d/79c62d94154fb332afb84191a996e66f.jpg'
-    },
-    {
-      id: 'ui-ux-design',
-      title: 'UI/UX Design',
-      description: 'User-focused interface and experience design to engage and retain users.',
-      icon: <FaChartLine />,
-      features: [
-        'Wireframing and prototyping',
-        'Usability testing',
-        'User journey mapping',
-        'Interactive UI design',
-        'Accessibility focused design',
-        'Design systems and components'
-      ],
-      image: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'web-security',
-      title: 'Web Security',
-      description: 'End-to-end protection of your digital platforms and data.',
-      icon: <FaShieldAlt />,
-      features: [
-        'SSL implementation',
-        'Vulnerability scanning',
-        'Firewalls and WAFs',
-        'Penetration testing',
-        'Security monitoring',
-        'Data encryption & privacy controls'
-      ],
-      image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'digital-marketing',
-      title: 'Digital Marketing',
-      description: 'Marketing strategies that amplify your online presence and drive results.',
-      icon: <FaChartLine />,
-      features: [
-        'SEO & SEM',
-        'Email marketing',
-        'Content marketing',
-        'PPC advertising',
-        'Marketing analytics',
-        'Conversion rate optimization'
-      ],
-      image: 'https://i.pinimg.com/1200x/2b/44/c3/2b44c33c81df088bd6032e7267366aba.jpg'
-    },
-    {
-      id: 'data-analysis-bi',
-      title: 'Data Analysis & BI',
-      description: 'Derive insights and trends from your data to make informed decisions.',
-      icon: <FaDatabase />,
-      features: [
-        'Data visualization dashboards',
-        'Descriptive and predictive analytics',
-        'ETL pipelines',
-        'Business intelligence reporting',
-        'Data cleansing & transformation',
-        'KPI tracking & benchmarking'
-      ],
-      image: 'https://i.pinimg.com/1200x/75/88/44/758844b51ffd60e3be7184a0a655e833.jpg'
-    },
-    {
-      id: 'cloud-services',
-      title: 'Cloud Services',
-      description: 'Scalable, reliable, and secure cloud-based infrastructure and solutions.',
-      icon: <FaCloud />,
-      features: [
-        'Cloud migration',
-        'IaaS / PaaS / SaaS setup',
-        'Cloud architecture design',
-        'DevOps and CI/CD pipelines',
-        'Disaster recovery solutions',
-        'Managed cloud services'
-      ],
-      image: 'https://i.pinimg.com/736x/f7/b7/3e/f7b73e20bf62956c19f86dcbd69ae0eb.jpg'
-    },
-    {
-      id: 'ecommerce-solution',
-      title: 'E-Commerce Solution',
-      description: 'Complete online store setup and integration to grow your digital sales.',
-      icon: <FaCogs />,
-      features: [
-        'Custom online store development',
-        'Payment gateway integration',
-        'Product and order management',
-        'Shopify, WooCommerce, Magento',
-        'User-friendly checkout experiences',
-        'Inventory and analytics tools'
-      ],
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'mobile-app-dev',
-      title: 'Mobile App Development',
-      description: 'Feature-rich mobile apps for iOS and Android platforms.',
-      icon: <FaMobileAlt />,
-      features: [
-        'Native iOS & Android apps',
-        'Cross-platform solutions (React Native, Flutter)',
-        'App UI/UX design',
-        'App testing and deployment',
-        'Push notifications',
-        'Ongoing support & updates'
-      ],
-      image: 'https://i.pinimg.com/736x/e3/70/5b/e3705b4255b7d26f778a0f34cdb296d3.jpg'
-    },
-    {
-      id: 'it-support',
-      title: 'IT Support & Maintenance',
-      description: 'Reliable IT support to keep your systems running smoothly.',
-      icon: <FaUsers />,
-      features: [
-        '24/7 technical support',
-        'Bug fixing & patch updates',
-        'Server maintenance',
-        'System monitoring',
-        'Backup & recovery',
-        'Helpdesk services'
-      ],
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'data-analytics-services',
-      title: 'Data Analytics & Services',
-      description: 'Data-driven services to extract, transform, and deliver valuable insights.',
-      icon: <FaDatabase />,
-      features: [
-        'ETL processes',
-        'Data mining',
-        'Predictive modeling',
-        'Cloud data pipelines',
-        'Custom analytics tools',
-        'Visualization & dashboards'
-      ],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'smm-services',
-      title: 'Social Media Marketing (SMM)',
-      description: 'Boost brand engagement with targeted social media strategies.',
-      icon: <FaChartLine />,
-      features: [
-        'Social media strategy',
-        'Content creation and management',
-        'Influencer marketing',
-        'Platform-specific campaigns (Instagram, Facebook, LinkedIn)',
-        'Social listening tools',
-        'Analytics and reporting'
-      ],
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80'
-    }
-  ];
-
-
+export default function Services() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden" style={{ height: '700px' }}>
-        {/* Background Image */}
+      {/* Hero */}
+      <section className="relative overflow-hidden h-[500px]">
         <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url('/images/hero/services-hero-bg.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.9)', // subtle darkening to fade image
-            zIndex: 0,
-          }}
-        ></div>
-
-        {/* Overlay for extra fade */}
-        <div
-          className="absolute inset-0 bg-black opacity-40"
-          style={{ zIndex: 1 }}
-        ></div>
-
-        {/* Content */}
-        <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col justify-center h-full text-center">
+          className="absolute inset-0 bg-cover bg-center brightness-90"
+          style={{ backgroundImage: `url('/images/hero/services-hero-bg.jpeg')` }}
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="container mx-auto px-4 relative z-10 flex flex-col justify-center h-full text-center">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
           >
             Our Services
           </motion.h1>
@@ -253,87 +40,102 @@ const Services = () => {
             className="text-xl text-gray-200 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
+            transition={{ delay: 0.1 }}
           >
             Comprehensive IT solutions tailored to your business needs.
           </motion.p>
         </div>
       </section>
 
-
-      {/* Services Overview */}
+      {/* Services overview grid */}
       <Section>
-        <div className="text-center mb-12">
-          <motion.h2 variants={itemVariants} initial="hidden" animate="visible" className="text-3xl font-bold mb-4">
-            What We Offer
-          </motion.h2>
-          <motion.p variants={itemVariants} initial="hidden" animate="visible" className="text-gray-700 max-w-2xl mx-auto">
-            We provide a wide range of IT services to help businesses of all sizes leverage technology for growth and success.
-          </motion.p>
-        </div>
+        <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  animate="visible"
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+>
+  {services.slice(0, 6).map((service) => (
+    <motion.div key={service.id} variants={itemVariants}>
+      <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+        {/* Icon */}
+        {service.icon && <service.icon size={40} className="text-primary mb-4" />}
 
-        {/* Staggered container */}
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 6).map((service) => (
-            <motion.div key={service.id} variants={itemVariants}>
-              <Card
-                title={service.title}
-                content={service.description}
-                icon={service.icon}
-                link={`#${service.id}`}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Title & Desc */}
+        <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+        <p className="text-gray-600 mb-4">{service.description}</p>
 
-        <div className="text-center mt-12">
-          <Button to="/contact" variant="primary">
-            Discuss Your Project
+        {/* Learn More Button */}
+        <HashLink
+          smooth
+          to={`/services#${service.id}`}
+          scroll={(el) => {
+            const y =
+              el.getBoundingClientRect().top +
+              window.pageYOffset -
+              HEADER_OFFSET;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }}
+        >
+          <Button size="sm" variant="primary">
+            Learn More
           </Button>
-        </div>
+        </HashLink>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
       </Section>
 
-      {/* Detailed Service Sections with stagger */}
-      {services.map((service, index) => (
+      {/* Detailed service sections with matching IDs */}
+      {services.map((service, idx) => (
         <Section
           key={service.id}
-          id={service.id}
-          bgColor={index % 2 === 0 ? 'bg-white' : 'bg-light'}
+          id={service.id} // important for scroll target
+          bgColor={idx % 2 === 0 ? "bg-white" : "bg-light"}
         >
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            {/* Text content */}
-            <motion.div variants={itemVariants} className={index % 2 !== 0 ? 'lg:order-2' : ''}>
-              <div className="flex items-center mb-4">
-                <div className="text-3xl text-primary mr-4">{service.icon}</div>
-                <h2 className="text-3xl font-bold">{service.title}</h2>
+            {/* Text */}
+            <motion.div
+              variants={itemVariants}
+              className={idx % 2 !== 0 ? "lg:order-2" : ""}
+            >
+              <div className="flex items-center mb-4 text-3xl text-primary">
+                {React.createElement(service.icon)}
+                <h2 className="ml-4 font-bold">{service.title}</h2>
               </div>
-              <p className="text-gray-700 mb-6">{service.description}</p>
-
-              <h3 className="text-xl font-semibold mb-4">What We Provide:</h3>
+              <p className="mb-6">{service.description}</p>
               <ul className="space-y-2 mb-6">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>{feature}</span>
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-primary mr-2">✓</span> {feature}
                   </li>
                 ))}
               </ul>
-
-              <Button to="/contact">
-                Request a Consultation
-              </Button>
+              <HashLink
+                smooth
+                to="/contact#contact-form"
+                scroll={el => {
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }}
+              >
+                <Button>Request a Consultation</Button>
+              </HashLink>
             </motion.div>
 
             {/* Image */}
             <motion.div
               variants={itemVariants}
-              className={`relative h-80 rounded-lg overflow-hidden shadow-xl ${index % 2 !== 0 ? 'lg:order-1' : ''}`}
+              className={`relative h-80 rounded-lg overflow-hidden shadow-xl ${idx % 2 !== 0 ? "lg:order-1" : ""
+                }`}
             >
               <img
                 src={service.image}
@@ -345,40 +147,6 @@ const Services = () => {
           </motion.div>
         </Section>
       ))}
-
-      {/* CTA Section */}
-      <Section bgColor="bg-primary" className="text-white">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.h2
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-3xl md:text-4xl font-bold mb-6"
-          >
-            Ready to Get Started?
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-xl mb-8"
-          >
-            Contact us today to discuss how our services can help your business grow and succeed.
-          </motion.p>
-          <motion.div variants={itemVariants} initial="hidden" animate="visible">
-            <Button
-              to="/contact"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/20"
-            >
-              Contact Us
-            </Button>
-          </motion.div>
-        </div>
-      </Section>
     </>
   );
-};
-
-export default Services;
+}

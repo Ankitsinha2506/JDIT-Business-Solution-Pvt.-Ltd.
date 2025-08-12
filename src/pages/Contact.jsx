@@ -158,7 +158,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <Section>
+      <Section id='contact-form'>
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-3 gap-10"
           initial="hidden"

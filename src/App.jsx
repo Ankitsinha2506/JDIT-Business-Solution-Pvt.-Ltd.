@@ -1,26 +1,88 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import ScrollToHashElement from "./components/layout/ScrollToHashElement";
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import USHealthcare from './pages/USHealthcare';
-import Careers from './pages/Careers';
-import NotFound from './pages/NotFound';
+// Lazy load pages
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Contact = lazy(() => import("./pages/Contact"));
+const USHealthcare = lazy(() => import("./pages/USHealthcare"));
+const Careers = lazy(() => import("./pages/Careers"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="us-healthcare" element={<USHealthcare />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="careers" element={<Careers />} />
-          <Route path="*" element={<NotFound />} />
+        {/* Parent layout route */}
+        <Route
+          path="/"
+          element={
+            <Layout>
+              {/* This runs on every route change for smooth scrolling */}
+              <ScrollToHashElement />
+            </Layout>
+          }
+        >
+          {/* Child routes */}
+          <Route
+            index
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <About />
+              </Suspense>
+            }
+          />
+          <Route
+            path="services"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Services />
+              </Suspense>
+            }
+          />
+          <Route
+            path="us-healthcare"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <USHealthcare />
+              </Suspense>
+            }
+          />
+          <Route
+            path="contact"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="careers"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Careers />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <NotFound />
+              </Suspense>
+            }
+          />
         </Route>
       </Routes>
     </Router>

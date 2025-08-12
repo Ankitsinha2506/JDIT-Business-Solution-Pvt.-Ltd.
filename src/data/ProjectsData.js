@@ -36,7 +36,7 @@ const projectData = [
     id: 5,
     img: "public/images/Projects/ShreeGraphicsDesign.jpeg",
     technology: "Website",
-    title: "ShreeGraphics Design",
+    title: "ShreeGraphics Design Website",
     description:
       "An intuitive online logo design tool enabling businesses and individuals to create unique brand identities with customizable templates, AI-based suggestions, and easy export options.",
   },

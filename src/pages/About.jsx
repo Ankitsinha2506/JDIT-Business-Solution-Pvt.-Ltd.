@@ -62,7 +62,7 @@ const About = () => {
       name: 'Sandeep Kumar',
       position: 'Lead Developer',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'Sandeep leads our development team, bringing extensive experience in software architecture and development.'
+      bio: 'Sandeep leads our development team, bringing experience in software architecture & development.'
     },
     {
       name: 'Priya Menon',
