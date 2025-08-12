@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TrueEmpact from "../components/layout/CarrerLayout/TrueEmpact";
 import LeanLeadLive from "../components/layout/CarrerLayout/LeanLeadLive";
 import JoinTalentCommunity from "../components/layout/CarrerLayout/JoinTalentCommunity";
 import OpenPositions from "../components/layout/CarrerLayout/OpenPositions";
 import './Careers.css'
+
+const counters = [
+  { value: "99", text: "Success in getting happy customer" },
+  { value: "25", text: "Hundared of successful business" },
+  { value: "101", text: "Total clients who love JDIT" },
+  { value: "4", text: "Stars reviews given by satisfied clients" },
+];
 
 const containerVariants = {
   hidden: {},
@@ -30,12 +37,34 @@ const itemVariants = {
 };
 
 const Careers = () => {
-  const counters = [
-    { value: "99", text: "Success in getting happy customer" },
-    { value: "25", text: "Hundared of successful business" },
-    { value: "101", text: "Total clients who love JDIT" },
-    { value: "4", text: "Stars reviews given by satisfied clients" },
-  ];
+
+  const [displayCounts, setDisplayCounts] = useState(
+    counters.map(() => 0)
+  );
+  useEffect(() => {
+    const timers = counters.map((counter, i) => {
+      let start = 0;
+      const end = counter.value;
+      const duration = 2000; // 2 seconds
+      const step = end / (duration / 30); // update every 30ms
+
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= end) {
+          start = end;
+          clearInterval(timer);
+        }
+        setDisplayCounts((prev) => {
+          const updated = [...prev];
+          updated[i] = Math.floor(start);
+          return updated;
+        });
+      }, 30);
+      return timer;
+    });
+
+    return () => timers.forEach((t) => clearInterval(t));
+  }, []);
 
   const whyWorkItems = [
     {
@@ -56,29 +85,29 @@ const Careers = () => {
     <div>
       {/* Banner Section */}
       <section
-  style={{
-    background: "url('/images/hero/carrer-hero.jpg') center/cover no-repeat",
-    minHeight: "700px",   // set fixed minimum height
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    textAlign: "center",
-    color: "#fff",
-    padding: "0 20px",   // optional horizontal padding
-  }}
->
-  <h1 style={{ fontSize: "48px", fontWeight: "bold" }}>Join Our Team</h1>
-  <p
-    style={{
-      fontSize: "18px",
-      maxWidth: "600px",
-      margin: "10px auto",
-    }}
-  >
-    Be part of a fast-growing digital solutions company and work on
-    projects that make an impact.
-  </p>
-</section>
+        style={{
+          background: "url('/images/hero/carrer-hero.jpg') center/cover no-repeat",
+          minHeight: "700px",   // set fixed minimum height
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "center",
+          color: "#fff",
+          padding: "0 20px",   // optional horizontal padding
+        }}
+      >
+        <h1 style={{ fontSize: "48px", fontWeight: "bold" }}>Join Our Team</h1>
+        <p
+          style={{
+            fontSize: "18px",
+            maxWidth: "600px",
+            margin: "10px auto",
+          }}
+        >
+          Be part of a fast-growing digital solutions company and work on
+          projects that make an impact.
+        </p>
+      </section>
 
 
       {/* Counter Section with stagger */}
@@ -88,25 +117,42 @@ const Careers = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="counter-container" style={{ display: "flex", gap: "2rem", justifyContent: "center", flexWrap: "wrap" }}>
+        <div
+          className="counter-container"
+          style={{
+            display: "flex",
+            gap: "2rem",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
           {counters.map((item, index) => (
             <motion.div
               className="counter-card"
               key={index}
               variants={itemVariants}
-              whileHover="hover"
+              whileHover={{ scale: 1.05 }}
               style={{
                 background: "#fff",
                 padding: "20px",
                 borderRadius: "8px",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
                 textAlign: "center",
-                cursor: "default",
                 minWidth: "180px",
               }}
             >
-              <h1 className="counter-value" style={{ fontSize: "3rem", marginBottom: "8px" }}>{item.value}</h1>
-              <h5 className="counter-text" style={{ fontSize: "1rem", color: "#555" }}>{item.text}</h5>
+              <h1
+                className="counter-value"
+                style={{ fontSize: "3rem", marginBottom: "8px" }}
+              >
+                {displayCounts[index]}
+              </h1>
+              <h5
+                className="counter-text"
+                style={{ fontSize: "1rem", color: "#555" }}
+              >
+                {item.text}
+              </h5>
             </motion.div>
           ))}
         </div>
