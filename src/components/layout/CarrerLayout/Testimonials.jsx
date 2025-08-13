@@ -1,4 +1,11 @@
 import Newage from "../../../../public/images/testimonials/Newage.png"
+import Nexus from "../../../../public/images/testimonials/Nexus.png"
+import Nimbja from "../../../../public/images/testimonials/Nimbja.png"
+import SmartMatrix from "../../../../public/images/testimonials/SmartMatrix.png"
+import SmartSoftwareServices from "../../../../public/images/testimonials/SmartSoftwareServices.png"
+import TechMahindra from "../../../../public/images/testimonials/TechMahindra.png"
+import Wipro from "../../../../public/images/testimonials/Wipro.png"
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -12,13 +19,13 @@ import 'swiper/css';
 import './Testimonial.css';
 
 const testimonials = [
-    { id: 1, src: Newage, alt: 'Testimonial Image 1' },
-    { id: 2, src: 'public/images/testimonials/Nexus.png', alt: 'Testimonial Image 2' },
-    { id: 3, src: 'public/images/testimonials/Nimbja.png', alt: 'Testimonial Image 3' },
-    { id: 4, src: 'public/images/testimonials/SmartMatrix.png', alt: 'Testimonial Image 4' },
-    { id: 5, src: 'public/images/testimonials/SmartSoftwareServices.png', alt: 'Testimonial Image 5' },
-    { id: 6, src: 'public/images/testimonials/TechMahindra.png', alt: 'Testimonial Image 6' },
-    { id: 7, src: 'public/images/testimonials/Wipro.png', alt: 'Testimonial Image 7' },
+    { id: 1, src: Newage, alt: 'Newage Image' },
+    { id: 2, src: Nexus, alt: 'Testimonial Image 2' },
+    { id: 3, src: Nimbja, alt: 'Testimonial Image 3' },
+    { id: 4, src: SmartMatrix, alt: 'Testimonial Image 4' },
+    { id: 5, src: SmartSoftwareServices, alt: 'Testimonial Image 5' },
+    { id: 6, src: TechMahindra, alt: 'Testimonial Image 6' },
+    { id: 7, src: Wipro, alt: 'Testimonial Image 7' },
     // { id: 8, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 8' },
 ];
 
