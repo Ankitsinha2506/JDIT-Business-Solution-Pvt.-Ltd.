@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <Link to="/" className="inline-flex items-center mb-8">
                 <img src={logoImage} alt="JDIT" className="h-12 w-auto" />
-                <span className="text-xl font-medium ml-2 text-white">Business Solutions</span>
+                <span className="text-xl font-medium ml-2 text-white">Business Solutions Pvt. Ltd.</span>
               </Link>
               <p className="text-gray-400 mb-8 max-w-md">
                 JDIT is a software development company specializing in custom software solutions for various industries.

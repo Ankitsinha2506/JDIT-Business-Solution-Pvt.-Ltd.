@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
 import Card from '../components/ui/Card';
 import Section from '../components/ui/Section';
+// import ankitImage from '../../public/images/AnkitImage.jpg';
 
 const containerVariants = {
   hidden: {},
@@ -59,10 +60,10 @@ const About = () => {
       bio: 'Neha oversees our technical strategy and ensures we stay at the forefront of technology innovation.'
     },
     {
-      name: 'Sandeep Kumar',
+      name: 'Ankit Lal Sinha',
       position: 'Lead Developer',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80',
-      bio: 'Sandeep leads our development team, bringing experience in software architecture & development.'
+      image: '../../public/images/AnkitImage.jpg',
+      bio: 'Ankit leads our development team, bringing experience in software architecture & development.'
     },
     {
       name: 'Priya Menon',
@@ -226,7 +227,7 @@ const About = () => {
           <motion.div variants={itemVariants} className="bg-white/10 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="text-gray-200">
-At JDIT Business Solutions Pvt. Ltd., our mission is to empower businesses of all sizes to achieve their full potential through innovative and customized IT solutions. We aim to be a trusted partner by delivering technology-driven services that enhance operational efficiency, foster digital transformation, and accelerate business growth.
+              At JDIT Business Solutions Pvt. Ltd., our mission is to empower businesses of all sizes to achieve their full potential through innovative and customized IT solutions. We aim to be a trusted partner by delivering technology-driven services that enhance operational efficiency, foster digital transformation, and accelerate business growth.
             </p>
           </motion.div>
 
