@@ -11,13 +11,13 @@ import 'swiper/css';
 import './Testimonial.css';
 
 const testimonials = [
-    { id: 1, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 1' },
-    { id: 2, src: 'src/assets/images/testimonials/Nexus.png', alt: 'Testimonial Image 2' },
-    { id: 3, src: 'src/assets/images/testimonials/Nimbja.png', alt: 'Testimonial Image 3' },
-    { id: 4, src: 'src/assets/images/testimonials/SmartMatrix.png', alt: 'Testimonial Image 4' },
-    { id: 5, src: 'src/assets/images/testimonials/SmartSoftwareServices.png', alt: 'Testimonial Image 5' },
-    { id: 6, src: 'src/assets/images/testimonials/TechMahindra.png', alt: 'Testimonial Image 6' },
-    { id: 7, src: 'src/assets/images/testimonials/Wipro.png', alt: 'Testimonial Image 7' },
+    { id: 1, src: 'public/images/testimonials/Newage.png', alt: 'Testimonial Image 1' },
+    { id: 2, src: 'public/images/testimonials/Nexus.png', alt: 'Testimonial Image 2' },
+    { id: 3, src: 'public/images/testimonials/Nimbja.png', alt: 'Testimonial Image 3' },
+    { id: 4, src: 'public/images/testimonials/SmartMatrix.png', alt: 'Testimonial Image 4' },
+    { id: 5, src: 'public/images/testimonials/SmartSoftwareServices.png', alt: 'Testimonial Image 5' },
+    { id: 6, src: 'public/images/testimonials/TechMahindra.png', alt: 'Testimonial Image 6' },
+    { id: 7, src: 'public/images/testimonials/Wipro.png', alt: 'Testimonial Image 7' },
     // { id: 8, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 8' },
 ];
 
