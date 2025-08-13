@@ -1,17 +1,22 @@
 // src/data/projectsData.js
-import img from "../../public/images/Projects/Drivesta.jpeg";
+import Drivesta from "../../public/images/Projects/Drivesta.jpeg";
+import Panchavtar from "../../public/images/Projects/Panchavtar.jpeg";
+import JaiHo from "../../public/images/Projects/JaiHo.jpeg";
+import Matrimony from "../../public/images/Projects/Matrimony.png";
+import ShreeGraphicsDesign from "../../public/images/Projects/ShreeGraphicsDesign.jpeg";
+import ShreeGraphicsDesign1 from "../../public/images/Projects/ShreeGraphicsDesign1.jpeg";
 const projectData = [
   {
     id: 1,
-    img: img,
-    technology: "Android / IOS Application",
+    img: Drivesta,
+    technology: ShreeGraphicsDesign1,
     title: "ShreeGraphics Design Application",
     description:
       "A professional logo-making application for Android and iOS that allows users to create custom designs with a wide range of templates, fonts, and editing tools, suitable for both beginners and graphic designers.",
   },
   {
     id: 2,
-    img: "public/images/Projects/Panchavtar.jpeg",
+    img: Panchavtar,
     technology: "Android / IOS Application",
     title: "Shree ChakaradharSwami Application",
     description:
@@ -19,7 +24,7 @@ const projectData = [
   },
   {
     id: 3,
-    img: "public/images/Projects/JaiHo.jpeg",
+    img: JaiHo,
     technology: "Android / IOS Application",
     title: "Jai Ho Application",
     description:
@@ -27,7 +32,7 @@ const projectData = [
   },
   {
     id: 4,
-    img: "public/images/Projects/Matrimony.png",
+    img: Matrimony,
     technology: "Website",
     title: "Matrimony Website",
     description:
@@ -35,7 +40,7 @@ const projectData = [
   },
   {
     id: 5,
-    img: "public/images/Projects/ShreeGraphicsDesign.jpeg",
+    img: ShreeGraphicsDesign,
     technology: "Website",
     title: "ShreeGraphics Design Website",
     description:
@@ -43,7 +48,7 @@ const projectData = [
   },
   {
     id: 6,
-    img: "public/images/Projects/Drivesta.jpeg",
+    img: Drivesta,
     technology: "Website",
     title: "Drivesta Website",
     description:
