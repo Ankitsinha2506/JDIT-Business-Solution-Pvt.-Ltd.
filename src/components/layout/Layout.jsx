@@ -12,7 +12,7 @@ const Layout = () => {
         <Outlet />
       </main>
       {/* ✅ Sticky WhatsApp icon on all pages */}
-      <WhatsAppStickyIcon />
+      {/* <WhatsAppStickyIcon /> */}
 
       {/* Chatbot widget loaded globally */}
       <ChatbotWidget />
