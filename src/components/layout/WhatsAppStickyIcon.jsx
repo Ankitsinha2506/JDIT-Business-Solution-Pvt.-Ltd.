@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppStickyIcon() {
-  const whatsappNumber = "9545450788"; // Replace with your WhatsApp number (country code + number, no symbols)
+  const whatsappNumber = "9112108484"; // Replace with your WhatsApp number (country code + number, no symbols)
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
@@ -12,8 +12,8 @@ export default function WhatsAppStickyIcon() {
       rel="noopener noreferrer"
       style={{
         position: "fixed",
-        bottom: "40px",
-        right: "30px", // ✅ always on right
+        bottom: "120px",
+        right: "25px", // ✅ always on right
         zIndex: 9999,  // stay on top of everything
         backgroundColor: "#25D366",
         borderRadius: "50%",
