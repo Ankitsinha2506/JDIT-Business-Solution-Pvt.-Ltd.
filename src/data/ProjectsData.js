@@ -8,8 +8,8 @@ import ShreeGraphicsDesign1 from "../../public/images/Projects/ShreeGraphicsDesi
 const projectData = [
   {
     id: 1,
-    img: Drivesta,
-    technology: ShreeGraphicsDesign1,
+    img: ShreeGraphicsDesign1,
+    technology: "Android / IOS Application",
     title: "ShreeGraphics Design Application",
     description:
       "A professional logo-making application for Android and iOS that allows users to create custom designs with a wide range of templates, fonts, and editing tools, suitable for both beginners and graphic designers.",
