@@ -147,6 +147,54 @@ export default function Services() {
           </motion.div>
         </Section>
       ))}
+
+      <Section bgColor="bg-primary" className="text-white">
+        <motion.div
+          className="text-center max-w-3xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            variants={itemVariants}
+            className="text-3xl md:text-4xl font-bold mb-6"
+          >
+            Ready to Transform Your Business?
+          </motion.h2>
+          <motion.p variants={itemVariants} className="text-xl mb-8">
+            Let's discuss how our IT solutions can help you achieve your business goals.
+          </motion.p>
+          <motion.div variants={itemVariants}>
+
+            <HashLink
+              smooth
+              to="/contact#contact-form"
+              scroll={el => {
+                const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }}
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white/20">
+                Get in Touch
+              </Button>
+            </HashLink>
+            {/* <Button
+              to="/contact"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white/20"
+            >
+            Get in Touch
+          </Button> */}
+          </motion.div>
+        </motion.div>
+      </Section >
+
+      
     </>
   );
 }

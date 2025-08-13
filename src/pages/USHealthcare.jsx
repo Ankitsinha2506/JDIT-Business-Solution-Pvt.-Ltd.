@@ -194,9 +194,8 @@ export default function USHealthcare() {
                   variants={itemVariants}
                   initial="hidden"
                   animate="visible"
-                  className={`relative h-64 sm:h-80 rounded-lg overflow-hidden shadow-xl ${
-                    index % 2 !== 0 ? "lg:order-1" : ""
-                  }`}
+                  className={`relative h-64 sm:h-80 rounded-lg overflow-hidden shadow-xl ${index % 2 !== 0 ? "lg:order-1" : ""
+                    }`}
                 >
                   <img
                     src={service.image}
@@ -212,7 +211,118 @@ export default function USHealthcare() {
           );
         })}
 
+
+
       {/* ... Healthcare Industry Section and CTA can remain the same */}
+      {/* Healthcare Industry Section */}
+      <Section bgColor="bg-blue-100">
+        <div className="text-center mb-12 px-4">
+          <motion.h2
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-2xl sm:text-3xl font-bold mb-4"
+          >
+            Why Choose Us for Healthcare IT
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-gray-700 max-w-xl sm:max-w-2xl mx-auto"
+          >
+            Our team understands the unique challenges and requirements of the healthcare industry.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-0">
+          {[
+            {
+              title: "Healthcare Expertise",
+              text: "Our team includes specialists with extensive experience in healthcare IT systems and compliance requirements.",
+            },
+            {
+              title: "HIPAA Compliance",
+              text: "All our healthcare solutions are designed with HIPAA compliance as a fundamental requirement.",
+            },
+            {
+              title: "Patient-Centered Approach",
+              text: "We develop solutions that enhance the patient experience while streamlining provider workflows.",
+            },
+            {
+              title: "Interoperability",
+              text: "Our systems are designed to integrate seamlessly with existing healthcare infrastructure and third-party applications.",
+            },
+            {
+              title: "Data Security",
+              text: "We implement robust security measures to protect sensitive patient information and healthcare data.",
+            },
+            {
+              title: "Ongoing Support",
+              text: "We provide continuous support and maintenance to ensure your healthcare IT systems operate efficiently.",
+            },
+          ].map(({ title, text }, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
+                y: -5,
+                transition: { duration: 0.3, ease: "easeInOut" },
+              }}
+              className="bg-white p-6 rounded-lg shadow-md cursor-pointer"
+            >
+              <h3 className="text-xl font-semibold mb-3">{title}</h3>
+              <p className="text-gray-700">{text}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* CTA Section */}
+      <Section bgColor="bg-blue-600" className="text-white">
+        <div className="text-center max-w-3xl mx-auto px-4 sm:px-0">
+          <motion.h2
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-3xl sm:text-4xl font-bold mb-6"
+          >
+            Transform Your Healthcare Organization
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-xl mb-8"
+          >
+            Contact us today to discuss how our healthcare IT solutions can help your
+            organization improve patient care and operational efficiency.
+          </motion.p>
+          <motion.div variants={itemVariants} initial="hidden" animate="visible">
+            <HashLink
+              smooth
+              to="/contact#contact-form"
+              scroll={(el) => {
+                const yOffset = -HEADER_OFFSET;
+                const y = el.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }}
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white/20"
+              >
+                Schedule a Consultation
+              </Button>
+            </HashLink>
+          </motion.div>
+        </div>
+      </Section>
     </LazyMotion>
   );
 }

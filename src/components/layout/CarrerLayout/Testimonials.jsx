@@ -5,6 +5,7 @@ import SmartMatrix from "../../../../public/images/testimonials/SmartMatrix.png"
 import SmartSoftwareServices from "../../../../public/images/testimonials/SmartSoftwareServices.png"
 import TechMahindra from "../../../../public/images/testimonials/TechMahindra.png"
 import Wipro from "../../../../public/images/testimonials/Wipro.png"
+import QMS from "../../../../public/images/testimonials/QMS.png"
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -26,7 +27,7 @@ const testimonials = [
     { id: 5, src: SmartSoftwareServices, alt: 'Testimonial Image 5' },
     { id: 6, src: TechMahindra, alt: 'Testimonial Image 6' },
     { id: 7, src: Wipro, alt: 'Testimonial Image 7' },
-    // { id: 8, src: 'src/assets/images/testimonials/Newage.png', alt: 'Testimonial Image 8' },
+    { id: 8, src: QMS, alt: 'Testimonial Image 8' },
 ];
 
 export default function Testimonials() {
