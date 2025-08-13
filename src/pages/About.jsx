@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
 import Card from '../components/ui/Card';
 import Section from '../components/ui/Section';
-// import ankitImage from '../../public/images/AnkitImage.jpg';
+import ankitImage from '../../public/images/ankit.jpg';
 
 const containerVariants = {
   hidden: {},
@@ -62,7 +62,7 @@ const About = () => {
     {
       name: 'Ankit Lal Sinha',
       position: 'Lead Developer',
-      image: '../../public/images/AnkitImage.jpg',
+      image: ankitImage,
       bio: 'Ankit leads our development team, bringing experience in software architecture & development.'
     },
     {
