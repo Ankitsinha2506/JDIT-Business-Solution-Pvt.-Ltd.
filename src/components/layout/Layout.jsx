@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import WhatsAppStickyIcon from './WhatsAppStickyIcon';
 
 const Layout = () => {
   return (
@@ -9,6 +10,8 @@ const Layout = () => {
       <main className="flex-grow pt-20">
         <Outlet />
       </main>
+      {/* ✅ Sticky WhatsApp icon on all pages */}
+      <WhatsAppStickyIcon />
       <Footer />
     </div>
   );
