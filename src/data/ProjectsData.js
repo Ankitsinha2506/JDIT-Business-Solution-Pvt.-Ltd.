@@ -1,8 +1,9 @@
 // src/data/projectsData.js
+import img from "../../public/images/Projects/Drivesta.jpeg";
 const projectData = [
   {
     id: 1,
-    img: "public/images/Projects/ShreeGraphicsDesign1.jpeg",
+    img: img,
     technology: "Android / IOS Application",
     title: "ShreeGraphics Design Application",
     description:
