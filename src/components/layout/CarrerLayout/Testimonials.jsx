@@ -1,3 +1,4 @@
+import Newage from "../../../../public/images/testimonials/Newage.png"
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -11,7 +12,7 @@ import 'swiper/css';
 import './Testimonial.css';
 
 const testimonials = [
-    { id: 1, src: 'public/images/testimonials/Newage.png', alt: 'Testimonial Image 1' },
+    { id: 1, src: Newage, alt: 'Testimonial Image 1' },
     { id: 2, src: 'public/images/testimonials/Nexus.png', alt: 'Testimonial Image 2' },
     { id: 3, src: 'public/images/testimonials/Nimbja.png', alt: 'Testimonial Image 3' },
     { id: 4, src: 'public/images/testimonials/SmartMatrix.png', alt: 'Testimonial Image 4' },
