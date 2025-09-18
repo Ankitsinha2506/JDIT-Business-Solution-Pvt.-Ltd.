@@ -151,7 +151,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
-            <p>&copy; {currentYear} JDIT Business Solutions Pvt Ltd. All rights reserved.</p>
+            <p>&copy; {currentYear} JDIT Software Solutions Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
