@@ -8,7 +8,7 @@ import './Careers.css'
 
 const counters = [
   { value: "99", text: "Success in getting happy customer" },
-  { value: "25", text: "Hundared of successful business" },
+  { value: "25", text: "Hundared of successful Software" },
   { value: "101", text: "Total clients who love JDIT" },
   { value: "4", text: "Stars reviews given by satisfied clients" },
 ];

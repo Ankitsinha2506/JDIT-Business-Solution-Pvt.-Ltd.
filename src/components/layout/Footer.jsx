@@ -36,9 +36,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaFacebook />, url: 'https://www.facebook.com/people/JDIT-Business-solutions-Pvt-Ltd/61570376000478/' },
+    { icon: <FaFacebook />, url: 'https://www.facebook.com/people/JDIT-Software-solutions-Pvt-Ltd/61570376000478/' },
     { icon: <FaInstagram />, url: 'https://www.instagram.com/jdit.solutions/' },
-    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/company/jdit-business-solution-pvt-ltd/posts/?feedView=all' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/company/jdit-Software-solution-pvt-ltd/posts/?feedView=all' },
   ];
 
   return (
@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <Link to="/" className="inline-flex items-center mb-8">
                 <img src={logoImage} alt="JDIT" className="h-12 w-auto" />
-                <span className="text-xl font-medium ml-2 text-white">Business Solutions Pvt. Ltd.</span>
+                <span className="text-xl font-medium ml-2 text-white">Software Solutions Pvt. Ltd.</span>
               </Link>
               <p className="text-gray-400 mb-8 max-w-md">
                 JDIT is a software development company specializing in custom software solutions for various industries.
@@ -151,7 +151,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
-            <p>&copy; {currentYear} JDIT Business Solutions Pvt Ltd. All rights reserved.</p>
+            <p>&copy; {currentYear} JDIT Software Solutions Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>

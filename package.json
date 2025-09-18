@@ -1,5 +1,5 @@
 {
-  "name": "jdit-business-solution",
+  "name": "jdit-Software-solution",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,6 +20,7 @@
     "react-dom": "^19.1.0",
     "react-owl-carousel": "^2.3.3",
     "react-router-hash-link": "^2.4.3",
+    "react-use-intercom": "^5.5.0",
     "swiper": "^11.2.10",
     "wowjs": "^1.1.3"
   },

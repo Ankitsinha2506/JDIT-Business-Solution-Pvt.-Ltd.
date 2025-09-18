@@ -97,7 +97,7 @@ export const services = [
             'Data visualization dashboards',
             'Descriptive and predictive analytics',
             'ETL pipelines',
-            'Business intelligence reporting',
+            'Software intelligence reporting',
             'Data cleansing & transformation',
             'KPI tracking & benchmarking'
         ],

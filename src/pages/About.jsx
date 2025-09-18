@@ -61,7 +61,7 @@ const About = () => {
     },
     {
       name: 'Ankit Lal Sinha',
-      position: 'Lead Developer',
+      position: 'Technical Lead',
       image: ankitImage,
       bio: 'Ankit leads our development team, bringing experience in software architecture & development.'
     },
@@ -101,9 +101,9 @@ const About = () => {
 
         {/* Content Layer */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <h1 style={{ fontSize: '48px', fontWeight: 'bold' }}>About JDIT Business Solutions</h1>
+          <h1 style={{ fontSize: '48px', fontWeight: 'bold' }}>About JDIT Software Solutions</h1>
           <p style={{ fontSize: '18px', maxWidth: '600px', margin: '10px auto' }}>
-            We are a team of passionate IT professionals dedicated to helping businesses succeed through innovative technology solutions.          </p>
+            We are a team of passionate IT professionals dedicated to helping Softwarees succeed through innovative technology solutions.          </p>
         </div>
       </section>
 
@@ -119,7 +119,7 @@ const About = () => {
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              At JDIT Business Solutions Pvt. Ltd., we are passionate about leveraging technology to empower businesses and individuals alike. Established with a vision to revolutionize the digital landscape, JDIT is a dynamic software development company committed to delivering innovative solutions tailored to meet the unique needs of our clients.
+              At JDIT Software Solutions Pvt. Ltd., we are passionate about leveraging technology to empower Softwarees and individuals alike. Established with a vision to revolutionize the digital landscape, JDIT is a dynamic software development company committed to delivering innovative solutions tailored to meet the unique needs of our clients.
             </p>
             <p className="text-gray-700 mb-4">
               With a focus on excellence and a dedication to customer satisfaction, we specialize in crafting cutting-edge software applications that drive efficiency, productivity, and growth. Our team of experienced engineers, designers, and project managers collaborate closely with clients to understand their objectives, challenges, and vision, ensuring that each solution we deliver exceeds expectations.
@@ -128,7 +128,7 @@ const About = () => {
               At JDIT, we embrace a customer-centric approach, prioritizing transparency, communication, and collaboration throughout the development process. Whether you require custom software development, mobile app development, web application development, or enterprise solutions, we have the expertise and resources to bring your ideas to life.
             </p>
             <p className="text-gray-700">
-              Join us on a journey of digital transformation. Discover how JDIT Business Solutions Pvt. Ltd. can help unlock your potential and propel your business to new heights through technology.
+              Join us on a journey of digital transformation. Discover how JDIT Software Solutions Pvt. Ltd. can help unlock your potential and propel your Software to new heights through technology.
             </p>
           </motion.div>
 
@@ -227,14 +227,14 @@ const About = () => {
           <motion.div variants={itemVariants} className="bg-white/10 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="text-gray-200">
-              At JDIT Business Solutions Pvt. Ltd., our mission is to empower businesses of all sizes to achieve their full potential through innovative and customized IT solutions. We aim to be a trusted partner by delivering technology-driven services that enhance operational efficiency, foster digital transformation, and accelerate business growth.
+              At JDIT Software Solutions Pvt. Ltd., our mission is to empower Softwarees of all sizes to achieve their full potential through innovative and customized IT solutions. We aim to be a trusted partner by delivering technology-driven services that enhance operational efficiency, foster digital transformation, and accelerate Software growth.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="bg-white/10 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
             <p className="text-gray-200">
-              Our vision at JDIT Business Solutions Pvt. Ltd. is to be the leading provider of transformative IT solutions globally. We envision a future where businesses of all sizes leverage technology to unlock their full potential and thrive in an ever-evolving digital landscape. Our commitment to innovation, integrity, and excellence fuels our journey toward this vision.            </p>
+              Our vision at JDIT Software Solutions Pvt. Ltd. is to be the leading provider of transformative IT solutions globally. We envision a future where Softwarees of all sizes leverage technology to unlock their full potential and thrive in an ever-evolving digital landscape. Our commitment to innovation, integrity, and excellence fuels our journey toward this vision.            </p>
           </motion.div>
         </motion.div>
       </Section>

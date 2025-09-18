@@ -42,7 +42,7 @@ export default function Services() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
           >
-            Comprehensive IT solutions tailored to your business needs.
+            Comprehensive IT solutions tailored to your Software needs.
           </motion.p>
         </div>
       </section>
@@ -160,10 +160,10 @@ export default function Services() {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Ready to Transform Your Business?
+            Ready to Transform Your Software?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-xl mb-8">
-            Let's discuss how our IT solutions can help you achieve your business goals.
+            Let's discuss how our IT solutions can help you achieve your Software goals.
           </motion.p>
           <motion.div variants={itemVariants}>
 

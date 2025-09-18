@@ -187,7 +187,7 @@ const Contact = () => {
               <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
               <div className="flex space-x-4 text-primary text-xl">
                 <a
-                  href="https://www.facebook.com/people/JDIT-Business-solutions-Pvt-Ltd/61570376000478/"
+                  href="https://www.facebook.com/people/JDIT-Software-solutions-Pvt-Ltd/61570376000478/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -205,7 +205,7 @@ const Contact = () => {
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/jdit-business-solution-pvt-ltd/posts/?feedView=all"
+                  href="https://www.linkedin.com/company/jdit-Software-solution-pvt-ltd/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -321,7 +321,7 @@ const Contact = () => {
       <Section withPadding={false}>
         <div className="h-96 w-full mb-5">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1965.2930753557828!2d73.93220908147956!3d18.50063401962412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1363301c3b9%3A0x9e75c5aee0aeb6db!2sJDIT%20BUSINESS%20SOLUTIONS%20PVT.LTD!5e0!3m2!1sen!2sin!4v1754776747142!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1965.2930753557828!2d73.93220908147956!3d18.50063401962412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1363301c3b9%3A0x9e75c5aee0aeb6db!2sJDIT%20Software%20SOLUTIONS%20PVT.LTD!5e0!3m2!1sen!2sin!4v1754776747142!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

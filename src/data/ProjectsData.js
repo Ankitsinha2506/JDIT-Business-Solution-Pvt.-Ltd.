@@ -44,7 +44,7 @@ const projectData = [
     technology: "Website",
     title: "ShreeGraphics Design Website",
     description:
-      "An intuitive online logo design tool enabling businesses and individuals to create unique brand identities with customizable templates, AI-based suggestions, and easy export options.",
+      "An intuitive online logo design tool enabling Softwarees and individuals to create unique brand identities with customizable templates, AI-based suggestions, and easy export options.",
   },
   {
     id: 6,

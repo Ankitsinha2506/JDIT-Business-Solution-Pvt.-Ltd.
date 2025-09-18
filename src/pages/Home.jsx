@@ -63,7 +63,7 @@ export default function Home() {
               className="text-4xl md:text-5xl font-extrabold text-white mb-6"
               variants={itemVariants}
             >
-              Empowering Your Business with Cutting-Edge IT Solutions
+              Empowering Your Software with Cutting-Edge IT Solutions
             </motion.h1>
             <motion.p
               className="text-xl text-gray-200 mb-8"
@@ -122,15 +122,15 @@ export default function Home() {
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
             {/* <p className="mb-4">
-              JDIT Business Solutions is a leading IT company providing
+              JDIT Software Solutions is a leading IT company providing
               innovative tech solutions worldwide.
             </p> */}
-            <p className="mb-4">JDIT Business Solutions is a leading IT company providing innovative technology
-              solutions to businesses worldwide. With over 10 years of experience, we've helped hundreds of
-              clients achieve their business goals through digital transformation.</p>
+            <p className="mb-4">JDIT Software Solutions is a leading IT company providing innovative technology
+              solutions to Softwarees worldwide. With over 10 years of experience, we've helped hundreds of
+              clients achieve their Software goals through digital transformation.</p>
               
             <p className="mb-4">Our team of skilled professionals is dedicated to delivering high-quality solutions
-              tailored to your specific needs. We combine technical expertise with business acumen to create
+              tailored to your specific needs. We combine technical expertise with Software acumen to create
               solutions that drive growth and efficiency.</p>
             <Button to="/about">Learn More About Us</Button>
           </motion.div>
@@ -221,10 +221,10 @@ export default function Home() {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Ready to Transform Your Business?
+            Ready to Transform Your Software?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-xl mb-8">
-            Let's discuss how our IT solutions can help you achieve your business goals.
+            Let's discuss how our IT solutions can help you achieve your Software goals.
           </motion.p>
           <motion.div variants={itemVariants}>
 
