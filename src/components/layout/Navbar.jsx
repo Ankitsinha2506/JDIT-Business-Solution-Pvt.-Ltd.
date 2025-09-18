@@ -42,8 +42,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={handleNavClick}>
-            <img src={Logo} alt="JDIT Business Solutions Logo" className="h-10" />
-            <span className="text-md font-medium ml-2">Business Solutions</span>
+            <img src={Logo} alt="JDIT Software Solutions Logo" className="h-10" />
+            <span className="text-md font-medium ml-2">Software Solutions</span>
           </Link>
 
           {/* Desktop Navigation */}
