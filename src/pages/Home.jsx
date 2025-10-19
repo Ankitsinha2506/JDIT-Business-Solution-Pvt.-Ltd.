@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      {/* <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden">
         <div
           className="absolute inset-0 filter brightness-50 bg-cover bg-center"
           style={{ backgroundImage: `url('/images/hero/home-hero-bg.jpg')` }}
@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* ABOUT */}
       <Section id="about" bgColor="bg-light">
