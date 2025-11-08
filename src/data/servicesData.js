@@ -192,5 +192,21 @@ export const services = [
             'Analytics and reporting'
         ],
         image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        id: 'osisoft-pi-system',
+        title: 'OSIsoft PI System Solutions',
+        description: 'We provide end-to-end OSIsoft PI System services to help industries collect, monitor, and analyze real-time operational data.',
+        icon: FaDatabase,
+        features: [
+            'System design and architecture',
+            'PI Server installation and configuration',
+            'Integration with PLCs and SCADA systems',
+            'PI Vision dashboard development',
+            'PI Asset Framework (AF) implementation',
+            'Training, documentation, and ongoing support'
+        ],
+        image: 'https://www.deadlinesolutions.com/hs-fs/hubfs/dsi-images/Pi-System-Infrastructure-System-Access.jpg?t=1528464265584&width=1200&name=Pi-System-Infrastructure-System-Access.jpg'
     }
+
 ];
