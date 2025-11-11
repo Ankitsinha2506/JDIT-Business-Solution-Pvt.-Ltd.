@@ -1,0 +1,12 @@
+# React / Vite SPA Routing Fix for Hostinger
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect all other routes to index.html
+RewriteRule ^ index.html [L]
