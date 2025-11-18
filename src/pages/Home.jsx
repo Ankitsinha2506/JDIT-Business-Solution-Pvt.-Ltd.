@@ -206,7 +206,7 @@ export default function Home() {
       <Projects />
 
       {/* Our Associate Partners Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* CTA Section */}
       <Section bgColor="bg-primary" className="text-white">
