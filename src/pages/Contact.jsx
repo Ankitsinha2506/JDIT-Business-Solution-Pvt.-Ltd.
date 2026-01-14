@@ -321,7 +321,7 @@ const Contact = () => {
       <Section withPadding={false}>
         <div className="h-96 w-full mb-5">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1965.2930753557828!2d73.93220908147956!3d18.50063401962412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1363301c3b9%3A0x9e75c5aee0aeb6db!2sJDIT%20Software%20SOLUTIONS%20PVT.LTD!5e0!3m2!1sen!2sin!4v1754776747142!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.615700222489!2d73.93028897524742!3d18.501058682588784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e2ebb152cd%3A0xb7e6429c1217c04e!2sJDIT%20SOFTWARE%20SOLUTIONS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1768384735018!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -329,6 +329,18 @@ const Contact = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+
+
+          {/* <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.615700222489!2d73.93028897524742!3d18.501058682588784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e2ebb152cd%3A0xb7e6429c1217c04e!2sJDIT%20SOFTWARE%20SOLUTIONS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1768384735018!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+
+          </iframe> */}
         </div>
       </Section>
     </>
